@@ -1,0 +1,31 @@
+<div flex layout="column">
+    <md-toolbar class="md-hue-1" layout="row">
+        <div class="md-toolbar-tools">
+            <div layout-fill>
+                <md-input-container id="searchbar" md-theme="input">
+                    <label>Company name or id</label>
+                    <input type="text" ng-model="query" ng-change="search()">
+                </md-input-container>
+            </div>
+            <md-button aria-label="Search" ng-click="search">
+                <ng-md-icon icon="search"></ng-md-icon>
+                Search
+            </md-button>
+        </div>
+
+    </md-toolbar>
+    <md-card  class="fade-element-in" md-colors="{ background : 'warn-500' }" ng-if="error">
+        <md-card-content>
+            {{ error.status }} : {{ error.statusText }}
+        </md-card-content>
+    </md-card>
+    <md-card  class="fade-element-in" ng-repeat="item in results" ng-click="openCompany(item.businessId)">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{ item.name }}</span>
+                <span class="md-subhead">ID: {{ item.businessId }}</span>
+                <span class="md-subhead">Registration date: {{ item.registrationDate }}</span>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+</div>

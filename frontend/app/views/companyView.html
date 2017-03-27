@@ -1,0 +1,66 @@
+<div flex layout="column">
+    <md-toolbar class="md-hue-1">
+        <div class="md-toolbar-tools">
+            <md-button ng-click="goBack()" aria-label="Back">
+                <
+            </md-button>
+            <h2>{{companyId}}</h2>
+        </div>
+    </md-toolbar>
+    <md-card  class="fade-element-in" md-colors="{ background : 'warn-500' }" ng-if="error">
+        <md-card-content>
+            {{ error.status }} : {{ error.statusText }}
+        </md-card-content>
+    </md-card>
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{ company.name }}</span>
+                <span class="md-subhead">ID: {{ company.businessId }}</span>
+                <span class="md-subhead">Registration date: {{ company.registrationDate }}</span>
+                <span class="md-subhead">Company form: {{ company.companyForm }}</span>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+    <md-card ng-repeat="address in company.addresses">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Address #{{ $index+1 }}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <table>
+                <tbody>
+                <tr >
+                    <td >Street</td>
+                    <td >{{ address.street }}</td>
+                </tr>
+                <tr >
+                    <td >Postcode</td>
+                    <td >{{ address.postCode }}</td>
+                </tr>
+                <tr >
+                    <td >City</td>
+                    <td >{{ address.city }}</td>
+                </tr>
+                <tr >
+                    <td >Country</td>
+                    <td >{{ address.country }}</td>
+                </tr>
+                <tr >
+                    <td >Type</td>
+                    <td >{{ address.type }}</td>
+                </tr>
+                <tr >
+                    <td >Language</td>
+                    <td >{{ address.language }}</td>
+                </tr>
+                <tr >
+                    <td >Registration date</td>
+                    <td >{{ address.registrationDate }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </md-card-content>
+    </md-card>
+</div>

@@ -1,0 +1,14 @@
+{
+  "name": "AvionData",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1",
+    "angular-route": "~1",
+    "angular-loader": "~1",
+    "angular-material": "~1",
+    "angular-animate": "~1",
+    "angular-aria": "~1",
+  }
+}
